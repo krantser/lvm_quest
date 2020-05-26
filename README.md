@@ -540,7 +540,7 @@ sde                         8:64   0    1G  0 disk
 ```
 
 Теперь загрузим в нашу домашнюю директорию несколько файлов для эксперимента со
-снэпшотами:
+снэпшотами, качаем первый файл:
 ```
 curl https://download.samba.org/pub/rsync/rsync.html --output rsync_man.html
 ```
@@ -552,6 +552,7 @@ curl https://download.samba.org/pub/rsync/rsync.html --output rsync_man.html
 100  194k  100  194k    0     0   181k      0  0:00:01  0:00:01 --:--:--  181k
 ```
 
+Загружаем второй файл:
 ```
 curl http://man7.org/linux/man-pages/man1/cp.1.html --output cp_man.html
 ```
@@ -563,6 +564,7 @@ curl http://man7.org/linux/man-pages/man1/cp.1.html --output cp_man.html
 100 13772  100 13772    0     0  33761      0 --:--:-- --:--:-- --:--:-- 33837
 ```
 
+Загружаем третий файл:
 ```
 curl http://man7.org/linux/man-pages/man1/less.1.html --output less_man.html
 ```
@@ -572,6 +574,7 @@ curl http://man7.org/linux/man-pages/man1/less.1.html --output less_man.html
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100 95452  100 95452    0     0   172k      0 --:--:-- --:--:-- --:--:--  172k
+```
 
 Теперь делаем снэпшот (под именем home_snapshot) нашей файловой системы, указывая
 том LogVolHome, где расположена директория /home:
