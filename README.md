@@ -88,9 +88,9 @@ cd /mnt/back_root/
 
 Выполним монитрование базовых файловых систем:
 ```
-[vagrant@lvm back_root]$ sudo mount -o bind /dev /mnt/back_root/dev/
-[vagrant@lvm back_root]$ sudo mount -t proc none /mnt/back_root/proc/
-[vagrant@lvm back_root]$ sudo mount -t sysfs none /mnt/back_root/sys/
+sudo mount -o bind /dev /mnt/back_root/dev/
+sudo mount -t proc none /mnt/back_root/proc/
+sudo mount -t sysfs none /mnt/back_root/sys/
 ```
 Скопируем директорию с конфигурацией загрузки и загрузчиком системы:
 ```
@@ -636,6 +636,11 @@ total 212K
 Теперь выходим из доманшней директории, что бы далее от неё можно было отмонтировать
 том и произвести откат изменений в файловой системе, а именно удаление файла:
 ```
+cd ../..
+```
+
+Отмонтируем устройство от /homeЖ
+```
 sudo umount /home/
 ```
 
@@ -657,7 +662,7 @@ sudo mount /home/
 
 Возвращаемся в домашнюю директорию:
 ```
-[vagrant@lvm /]$ cd
+cd
 ```
 
 Просматриваем содержимое директории и видим, что удалённый файл снова на месте:
